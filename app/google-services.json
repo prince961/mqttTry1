@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "238979945096",
+    "firebase_url": "https://pingfox-smart-home.firebaseio.com",
+    "project_id": "pingfox-smart-home",
+    "storage_bucket": "pingfox-smart-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238979945096:android:c4cbe22afec9e6ec",
+        "android_client_info": {
+          "package_name": "com.example.mohit.mqtttry1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238979945096-2vllvgf1rfru8v1d4j6d81ep9vff3lnq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGOUupASC0wuh1tm5OnRDHlZ2Qu1WpdDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
