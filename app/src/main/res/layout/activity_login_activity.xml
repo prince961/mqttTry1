@@ -52,7 +52,7 @@
             android:layout_marginBottom="116dp"
             android:backgroundTint="@android:color/holo_red_light"
             android:onClick="LoginButton"
-            android:text="Log in" />
+            android:text="write Data" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/googleSign"
@@ -61,7 +61,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="163dp"
-            android:onClick="GoogleSign"
             app:colorScheme="dark"
             app:buttonSize="wide"
             />
