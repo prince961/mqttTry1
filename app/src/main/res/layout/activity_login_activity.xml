@@ -85,7 +85,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="13dp"
             android:fontFamily="@font/artifika"
-            android:onClick="RegisterText"
             android:text="Home Automation Experts"
             android:textAllCaps="false"
             android:textSize="14sp"

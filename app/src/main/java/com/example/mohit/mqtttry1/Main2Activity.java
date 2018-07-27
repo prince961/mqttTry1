@@ -22,6 +22,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -47,6 +48,7 @@ public class Main2Activity extends AppCompatActivity {
     private GoogleSignInAccount account;
     private DatabaseReference databaseReference;
     FirebaseDatabase database;
+
     //User user;
 
 
@@ -94,12 +96,7 @@ public class Main2Activity extends AppCompatActivity {
         //writeNewUser(account.getDisplayName(),account.getEmail(),"phone");
 
     }
-    private void writeNewUser(String fullName, String email, String phone) {
-        User user = new User(fullName, email, "12");
 
-        databaseReference.child("users").child(phone).setValue(user);
-        databaseReference.child("condition2").setValue("5");
-    }
 
 
     @Override
@@ -144,16 +141,23 @@ public class Main2Activity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("firebase auth", "signInWithCredential:success");
                             FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            assert firebaseUser != null;
                             FirebaseUserMetadata metadata = firebaseUser.getMetadata();
                             User localUser = new User(firebaseUser.getDisplayName(),firebaseUser.getEmail(),"123");
                             databaseReference.child("users").child(firebaseUser.getUid()).setValue(localUser);
+                            assert metadata != null;
                             if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
                                 // The user is new, show them a fancy intro screen!
                                 Log.d("LoggedInUser","new user");
+                                Intent intent = new Intent(getBaseContext(), FirstLogin.class);
+                                startActivity(intent);
+
 
 
                             } else {
                                 Log.d("LoggedInUser","old user");
+                                Intent intent = new Intent(getBaseContext(), FirstLogin.class);
+                                startActivity(intent);
 
                                 //Log.d("phoneNumbber", Objects.requireNonNull(user.getPhoneNumber()));
 
