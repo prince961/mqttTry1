@@ -143,7 +143,7 @@ public class Main2Activity extends AppCompatActivity {
                             FirebaseUser firebaseUser = mAuth.getCurrentUser();
                             assert firebaseUser != null;
                             FirebaseUserMetadata metadata = firebaseUser.getMetadata();
-                            User localUser = new User(firebaseUser.getDisplayName(),firebaseUser.getEmail(),"123");
+                            User localUser = new User(firebaseUser.getDisplayName(),firebaseUser.getEmail());
                             databaseReference.child("users").child(firebaseUser.getUid()).setValue(localUser);
                             assert metadata != null;
                             if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
