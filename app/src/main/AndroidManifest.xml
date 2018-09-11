@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/pingfox_logo"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.AppCompat.Light">
-        <activity android:name=".DetectPingfoxDevice">
+        <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
         <activity android:name=".UserRegistration" />
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -38,7 +38,7 @@
 
         <activity android:name=".FirstLogin" />
         <activity android:name=".AddDeviceInRoom" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".DetectPingfoxDevice"/>
 
 
     </application>
