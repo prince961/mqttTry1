@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class RoomListAdapter extends RecyclerView.Adapter <RoomListAdapter.ViewHolder> {
 
-    private Room[] roomList ;
+    private ArrayList<Room> roomList ;
     private Context context;
 
-    public  RoomListAdapter (Room[] CroomList, Context context){
+    public  RoomListAdapter (ArrayList<Room> CroomList, Context context){
         this.roomList = CroomList;
         this.context = context;
     }
@@ -33,7 +35,7 @@ public class RoomListAdapter extends RecyclerView.Adapter <RoomListAdapter.ViewH
     @Override
     public RoomListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        TextView v = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.room_list_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.room_list_item, parent, false);
 
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -42,10 +44,12 @@ public class RoomListAdapter extends RecyclerView.Adapter <RoomListAdapter.ViewH
     @Override
     public void onBindViewHolder(@NonNull RoomListAdapter.ViewHolder holder, int position) {
 
+        holder.heading.setText( roomList.get(position).getName());
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return roomList.size();
     }
 }
